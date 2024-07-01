@@ -15,7 +15,9 @@ struct EnigmaView: View {
     @State private var plugboardMappings: [Character: Character] = [:]
     @State private var plaintext = ""
     @State private var ciphertext = ""
-
+    @State private var showingErrorAlert = false
+    @State private var errorMessage = ""
+    
     private let alphabet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
     var body: some View {
@@ -54,20 +56,33 @@ struct EnigmaView: View {
                         Text(ciphertext)
                     }
                     
-                    Button(action: encryptText) {
+                    Button(action: {
+                        do {
+                            try encryptText()
+                        } catch {
+                            errorMessage = error.localizedDescription
+                            showingErrorAlert = true
+                        }
+                    }) {
                         Text("Encrypt")
                     }
+                    .alert(isPresented: $showingErrorAlert) {
+                        Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                    }
+
                 }
                 .navigationTitle("Enigma Encryption")
             }
     }
 
-    func encryptText() {
+    func encryptText() throws{
         let enigma = EnigmaMachine(startChar1: Character(rotor1StartChar),
                                    startChar2: Character(rotor2StartChar),
                                    startChar3: Character(rotor3StartChar),
                                    plugboard: plugboardMappings)
-        ciphertext = enigma.encrypt(plaintext)
+        
+        do {ciphertext = try enigma.encrypt(plaintext)}
+        catch (EnigmaError.asciiNotExist) {throw EnigmaError.asciiNotExist}
     }
 }
 

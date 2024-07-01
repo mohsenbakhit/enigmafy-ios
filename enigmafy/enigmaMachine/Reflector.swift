@@ -14,8 +14,8 @@ class Reflector {
         self.wiring = wiring
     }
     
-    func reflect(input: Character) -> Character? {
-        let asciiValue = input.asciiValue
+    func reflect(input: Character) throws -> Character {
+        guard let asciiValue = input.asciiValue else {throw EnigmaError.asciiNotExist}
         let index = Int(asciiValue - Character("A").asciiValue!)
         return wiring[index]
     }

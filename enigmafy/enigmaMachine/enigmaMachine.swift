@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum EnigmaError: Error {
+    case asciiNotExist
+}
+
 class EnigmaMachine {
     // As this is an M3 simulator, we have 3 Rotors and a Reflector
     var r1: Rotor
@@ -38,27 +42,35 @@ class EnigmaMachine {
         self.count = 0
     }
 
-    func encrypt(_ plaintext: String) -> String {
+    func encrypt(_ plaintext: String) throws -> String {
         var cipher = ""
         for char in plaintext {
-            cipher.append(encryptChar(char))
+            do {
+                try cipher.append(encryptChar(char))
+            } catch (EnigmaError.asciiNotExist) {
+                throw EnigmaError.asciiNotExist
+            }
         }
         return cipher
     }
 
-    private func encryptChar(_ input: Character) -> Character {
+    private func encryptChar(_ input: Character) throws -> Character {
         guard input.isLetter else { return input }
         rotateRotors()
-        var output = plugboard.retrieve(input: input)
-        output = r1.forwardEncrypt(input: output)!
-        output = r2.forwardEncrypt(input: output)!
-        output = r3.forwardEncrypt(input: output)!
-        output = reflector.reflect(input: output)!
-        output = r3.backwardEncrypt(input: output)!
-        output = r2.backwardEncrypt(input: output)!
-        output = r1.backwardEncrypt(input: output)!
-        output = plugboard.retrieve(input: output)
-        return output
+        do {
+            var output = try plugboard.retrieve(input: input)
+            output = try r1.forwardEncrypt(input: output)
+            output = try r2.forwardEncrypt(input: output)
+            output = try r3.forwardEncrypt(input: output)
+            output = try reflector.reflect(input: output)
+            output = try r3.backwardEncrypt(input: output)
+            output = try r2.backwardEncrypt(input: output)
+            output = try r1.backwardEncrypt(input: output)
+            output = plugboard.retrieve(input: output)
+            return output
+        } catch (EnigmaError.asciiNotExist) {
+            throw EnigmaError.asciiNotExist
+        }
     }
 
     private func rotateRotors() {
