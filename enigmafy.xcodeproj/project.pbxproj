@@ -14,6 +14,11 @@
 		82CF1B362C32FE470061A835 /* enigmafyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B352C32FE470061A835 /* enigmafyTests.swift */; };
 		82CF1B402C32FE470061A835 /* enigmafyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B3F2C32FE470061A835 /* enigmafyUITests.swift */; };
 		82CF1B422C32FE470061A835 /* enigmafyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B412C32FE470061A835 /* enigmafyUITestsLaunchTests.swift */; };
+		82CF1B572C330FBC0061A835 /* enigmaMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B562C330FBC0061A835 /* enigmaMachineTests.swift */; };
+		82CF1B592C330FCE0061A835 /* enigmaMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B582C330FCE0061A835 /* enigmaMachine.swift */; };
+		82CF1B5B2C3326D90061A835 /* Rotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5A2C3326D90061A835 /* Rotor.swift */; };
+		82CF1B5D2C3326FB0061A835 /* Reflector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5C2C3326FB0061A835 /* Reflector.swift */; };
+		82CF1B5F2C332ADE0061A835 /* Plugboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5E2C332ADE0061A835 /* Plugboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		82CF1B3B2C32FE470061A835 /* enigmafyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = enigmafyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82CF1B3F2C32FE470061A835 /* enigmafyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enigmafyUITests.swift; sourceTree = "<group>"; };
 		82CF1B412C32FE470061A835 /* enigmafyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enigmafyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82CF1B562C330FBC0061A835 /* enigmaMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enigmaMachineTests.swift; sourceTree = "<group>"; };
+		82CF1B582C330FCE0061A835 /* enigmaMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enigmaMachine.swift; sourceTree = "<group>"; };
+		82CF1B5A2C3326D90061A835 /* Rotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotor.swift; sourceTree = "<group>"; };
+		82CF1B5C2C3326FB0061A835 /* Reflector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflector.swift; sourceTree = "<group>"; };
+		82CF1B5E2C332ADE0061A835 /* Plugboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				82CF1B242C32FE460061A835 /* enigmafyApp.swift */,
+				82CF1B602C332AE70061A835 /* enigmaMachine */,
 				82CF1B262C32FE460061A835 /* ContentView.swift */,
 				82CF1B282C32FE470061A835 /* Assets.xcassets */,
 				82CF1B2A2C32FE470061A835 /* Preview Content */,
@@ -114,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				82CF1B352C32FE470061A835 /* enigmafyTests.swift */,
+				82CF1B562C330FBC0061A835 /* enigmaMachineTests.swift */,
 			);
 			path = enigmafyTests;
 			sourceTree = "<group>";
@@ -125,6 +137,17 @@
 				82CF1B412C32FE470061A835 /* enigmafyUITestsLaunchTests.swift */,
 			);
 			path = enigmafyUITests;
+			sourceTree = "<group>";
+		};
+		82CF1B602C332AE70061A835 /* enigmaMachine */ = {
+			isa = PBXGroup;
+			children = (
+				82CF1B582C330FCE0061A835 /* enigmaMachine.swift */,
+				82CF1B5E2C332ADE0061A835 /* Plugboard.swift */,
+				82CF1B5C2C3326FB0061A835 /* Reflector.swift */,
+				82CF1B5A2C3326D90061A835 /* Rotor.swift */,
+			);
+			path = enigmaMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CF1B5B2C3326D90061A835 /* Rotor.swift in Sources */,
 				82CF1B272C32FE460061A835 /* ContentView.swift in Sources */,
+				82CF1B5F2C332ADE0061A835 /* Plugboard.swift in Sources */,
 				82CF1B252C32FE460061A835 /* enigmafyApp.swift in Sources */,
+				82CF1B592C330FCE0061A835 /* enigmaMachine.swift in Sources */,
+				82CF1B5D2C3326FB0061A835 /* Reflector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82CF1B362C32FE470061A835 /* enigmafyTests.swift in Sources */,
+				82CF1B572C330FBC0061A835 /* enigmaMachineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
