@@ -52,9 +52,6 @@ struct EnigmaView: View {
                         TextField("Enter plaintext", text: $plaintext)
                     }
                     
-                    Section(header: Text("Encrypted Text")) {
-                        Text(ciphertext)
-                    }
                     
                     Button(action: {
                         do {
@@ -68,6 +65,10 @@ struct EnigmaView: View {
                     }
                     .alert(isPresented: $showingErrorAlert) {
                         Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                    }
+                    
+                    Section(header: Text("Enigmatized Text")) {
+                        Text(ciphertext)
                     }
 
                 }
@@ -110,8 +111,6 @@ struct PlugboardSettingsView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    EnigmaView()
 }

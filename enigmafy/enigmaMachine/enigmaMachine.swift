@@ -44,7 +44,7 @@ class EnigmaMachine {
 
     func encrypt(_ plaintext: String) throws -> String {
         var cipher = ""
-        for char in plaintext {
+        for char in plaintext.uppercased() {
             do {
                 try cipher.append(encryptChar(char))
             } catch (EnigmaError.asciiNotExist) {
