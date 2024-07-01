@@ -15,7 +15,7 @@ class Reflector {
     }
     
     func reflect(input: Character) -> Character? {
-        guard let asciiValue = input.asciiValue else {return nil}
+        let asciiValue = input.asciiValue
         let index = Int(asciiValue - Character("A").asciiValue!)
         return wiring[index]
     }

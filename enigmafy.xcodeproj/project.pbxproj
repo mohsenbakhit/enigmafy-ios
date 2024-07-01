@@ -19,6 +19,10 @@
 		82CF1B5B2C3326D90061A835 /* Rotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5A2C3326D90061A835 /* Rotor.swift */; };
 		82CF1B5D2C3326FB0061A835 /* Reflector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5C2C3326FB0061A835 /* Reflector.swift */; };
 		82CF1B5F2C332ADE0061A835 /* Plugboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B5E2C332ADE0061A835 /* Plugboard.swift */; };
+		82CF1B632C3331DE0061A835 /* caesarCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B622C3331DE0061A835 /* caesarCipher.swift */; };
+		82CF1B692C3339D20061A835 /* CaesarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B682C3339D20061A835 /* CaesarView.swift */; };
+		82CF1B6B2C333A170061A835 /* caesarCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B6A2C333A170061A835 /* caesarCipherTests.swift */; };
+		82CF1B6D2C333DCE0061A835 /* EnigmaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF1B6C2C333DCE0061A835 /* EnigmaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		82CF1B5A2C3326D90061A835 /* Rotor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotor.swift; sourceTree = "<group>"; };
 		82CF1B5C2C3326FB0061A835 /* Reflector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reflector.swift; sourceTree = "<group>"; };
 		82CF1B5E2C332ADE0061A835 /* Plugboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugboard.swift; sourceTree = "<group>"; };
+		82CF1B622C3331DE0061A835 /* caesarCipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caesarCipher.swift; sourceTree = "<group>"; };
+		82CF1B682C3339D20061A835 /* CaesarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaesarView.swift; sourceTree = "<group>"; };
+		82CF1B6A2C333A170061A835 /* caesarCipherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caesarCipherTests.swift; sourceTree = "<group>"; };
+		82CF1B6C2C333DCE0061A835 /* EnigmaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +112,12 @@
 		82CF1B232C32FE460061A835 /* enigmafy */ = {
 			isa = PBXGroup;
 			children = (
-				82CF1B242C32FE460061A835 /* enigmafyApp.swift */,
+				82CF1B612C332FD30061A835 /* caesarCipher */,
 				82CF1B602C332AE70061A835 /* enigmaMachine */,
 				82CF1B262C32FE460061A835 /* ContentView.swift */,
+				82CF1B6C2C333DCE0061A835 /* EnigmaView.swift */,
+				82CF1B682C3339D20061A835 /* CaesarView.swift */,
+				82CF1B242C32FE460061A835 /* enigmafyApp.swift */,
 				82CF1B282C32FE470061A835 /* Assets.xcassets */,
 				82CF1B2A2C32FE470061A835 /* Preview Content */,
 			);
@@ -126,6 +137,7 @@
 			children = (
 				82CF1B352C32FE470061A835 /* enigmafyTests.swift */,
 				82CF1B562C330FBC0061A835 /* enigmaMachineTests.swift */,
+				82CF1B6A2C333A170061A835 /* caesarCipherTests.swift */,
 			);
 			path = enigmafyTests;
 			sourceTree = "<group>";
@@ -148,6 +160,14 @@
 				82CF1B5A2C3326D90061A835 /* Rotor.swift */,
 			);
 			path = enigmaMachine;
+			sourceTree = "<group>";
+		};
+		82CF1B612C332FD30061A835 /* caesarCipher */ = {
+			isa = PBXGroup;
+			children = (
+				82CF1B622C3331DE0061A835 /* caesarCipher.swift */,
+			);
+			path = caesarCipher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +303,11 @@
 				82CF1B5B2C3326D90061A835 /* Rotor.swift in Sources */,
 				82CF1B272C32FE460061A835 /* ContentView.swift in Sources */,
 				82CF1B5F2C332ADE0061A835 /* Plugboard.swift in Sources */,
+				82CF1B6D2C333DCE0061A835 /* EnigmaView.swift in Sources */,
+				82CF1B632C3331DE0061A835 /* caesarCipher.swift in Sources */,
 				82CF1B252C32FE460061A835 /* enigmafyApp.swift in Sources */,
 				82CF1B592C330FCE0061A835 /* enigmaMachine.swift in Sources */,
+				82CF1B692C3339D20061A835 /* CaesarView.swift in Sources */,
 				82CF1B5D2C3326FB0061A835 /* Reflector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CF1B6B2C333A170061A835 /* caesarCipherTests.swift in Sources */,
 				82CF1B362C32FE470061A835 /* enigmafyTests.swift in Sources */,
 				82CF1B572C330FBC0061A835 /* enigmaMachineTests.swift in Sources */,
 			);
