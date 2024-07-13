@@ -13,11 +13,15 @@ struct CaesarView: View {
     @State private var ciphertext = ""
     @State private var showingErrorAlert = false
     @State private var errorMessage = ""
+    @State private var decrypt = false
     private let alphabet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Cipher Settings")) {
+                    Toggle(isOn: $decrypt, label: {
+                        Text("Decrypt Mode")
+                    })
                     Text("\(shift): A ➡︎ \(alphabet[shift])")
                     Slider(value:IntFromDoubleBinding(intValue: $shift).doubleValue, in: 1...26, step:1.0) {
                     }
@@ -28,7 +32,12 @@ struct CaesarView: View {
                 }
                 
                 Button(action: {
-                    ciphertext = caesarify(input: plaintext, shift: shift)
+                    if decrypt {
+                        ciphertext = decaesarify(input: plaintext, shift: shift)
+                    }
+                    else {
+                        ciphertext = caesarify(input: plaintext, shift: shift)
+                    }
                 }) {
                     Text("Encrypt")
                 }

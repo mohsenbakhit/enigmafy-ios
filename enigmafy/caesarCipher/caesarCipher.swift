@@ -21,3 +21,16 @@ func caesarify(input: String, shift: Int) -> String{
     }
     return output
 }
+
+func decaesarify(input: String, shift:Int) -> String {
+    var output = ""
+    for letter in input.uppercased() {
+        if let index = alphabet.firstIndex(of: letter) {
+            let newIndex = (index - shift) % 26
+            output.append(alphabet[newIndex])
+        } else {
+            output.append(letter)
+        }
+    }
+    return output
+}
