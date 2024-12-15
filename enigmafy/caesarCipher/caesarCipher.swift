@@ -22,15 +22,19 @@ func caesarify(input: String, shift: Int) -> String{
     return output
 }
 
-func decaesarify(input: String, shift:Int) -> String {
+func decaesarify(input: String, shift: Int) -> String {
     var output = ""
+    let shift = shift % 26 // Normalize the shift to within the range of the alphabet
+
     for letter in input.uppercased() {
         if let index = alphabet.firstIndex(of: letter) {
-            let newIndex = (index - shift) % 26
+            // Calculate the new index ensuring it wraps correctly
+            let newIndex = (index - shift + 26) % 26
             output.append(alphabet[newIndex])
         } else {
-            output.append(letter)
+            output.append(letter) // Append non-alphabetic characters as is
         }
     }
+
     return output
 }

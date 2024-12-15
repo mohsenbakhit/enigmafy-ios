@@ -7,36 +7,53 @@
 
 import SwiftUI
 
+// Main front page
 struct ContentView: View {
+    var encryptionMethods = [
+        "Enigma Cipher",
+        "Caesar Cipher",
+        "RSA Encryption"
+    ]
+
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                NavigationLink(destination: EnigmaView()) {
-                    Text("Enigma Encryption")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(width: 280, height: 60)
-                        .background(Color.green)
-                        .cornerRadius(10)
+            VStack {
+                Text("Enigmafy")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+
+                Text("Choose your encryption method:")
+                    .font(.headline)
+
+                List(encryptionMethods, id: \ .self) { method in
+                    NavigationLink(destination: destinationView(for: method)) {
+                        Text(method)
+                    }
                 }
-                
-                NavigationLink(destination: CaesarView()) {
-                    Text("Caesar Cipher")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .frame(width: 280, height: 60)
-                        .background(Color(red: 220/255, green: 15/255, blue: 50/255))
-                        .cornerRadius(10)
-                }
-                Text("More support will be added!")
             }
-            .navigationTitle("Enigmafy")
-            .padding()
+            .navigationTitle("Home")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+    }
+
+    // Maps encryption methods to their respective views
+    @ViewBuilder
+    func destinationView(for method: String) -> some View {
+        switch method {
+        case "Enigma Cipher":
+            EnigmaView()
+        case "Caesar Cipher":
+            CaesarView()
+        case "RSA Encryption":
+            RSAView()
+        default:
+            Text("Unknown Method")
+        }
     }
 }
 
-#Preview {
-    ContentView()
+struct FrontPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
