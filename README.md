@@ -12,6 +12,7 @@ This is a Swift app that allows users to encrypt a text using different encrypti
 - **Caesar Cipher**: Apply a Caesar cipher with a customizable shift value.
 ![enigma_use](https://github.com/user-attachments/assets/462eb58b-18aa-43bf-9e00-758cee6cb9f1)
 
+- **RSA Encryption**: Using a public key and Swift's cryptography library, encrypt and decrypt text using RSA.
 ## Requirements
 
 - Xcode 12.0 or later
